@@ -84,7 +84,7 @@ setting: {
 
 ```html
 <div id="app">
-	<pattern-input class="your-class-name"
+	<pattern-input placeholder="只能输入正整数" maxlength="10" class="your-class-name"
 	               :pattern="setting.pattern"
 	               :flags="setting.flags"
 	               :replacement="setting.replacement"
