@@ -1,8 +1,8 @@
 {
-  "name": "cd-adc-pattern-input",
-  "version": "0.0.1",
+  "name": "ct-adc-pattern-input",
+  "version": "0.0.2",
   "description": "A Vue2.0 Component for limiting user input",
-  "main": "src/component/cd-adc-pattern-input.vue",
+  "main": "src/component/ct-adc-pattern-input.vue",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js"

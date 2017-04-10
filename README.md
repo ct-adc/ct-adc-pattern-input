@@ -48,6 +48,8 @@ cd-adc-pattern-input/
 ├── src/
 │   ├── /component
 │   │   └── pattern-input.vue
+│   ├── /img
+│   │  └── ... demo ...
 │   └── /js
 │      └── ... demo ...
 └── /view
