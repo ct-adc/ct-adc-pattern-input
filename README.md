@@ -1,4 +1,4 @@
-# cd-adc-pattern-input
+# ct-adc-pattern-input
 
 A Vue2.0 Component used RegExp to limit the user's input, and works like native input element.
 
@@ -9,6 +9,7 @@ A Vue2.0 Component used RegExp to limit the user's input, and works like native 
 - [What's included](#whats-included)
 - [Quick start](#quick-start)
 - [Bugs and feature requests](#bugs-and-feature-requests)
+- [Thought](#thought)
 - [License](#license)
 
 ## Demo build setup
@@ -37,19 +38,16 @@ Just click there: [Live Demo](http://htmlpreview.github.io/?https://github.com/c
 
 ![demo.gif](./src/img/demo.gif)
 
-
 ## What's included
 
 Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
 
 ```
-cd-adc-pattern-input/
+ct-adc-pattern-input/
 ├── ...
 ├── src/
 │   ├── /component
 │   │   └── pattern-input.vue
-│   ├── /img
-│   │  └── ... demo ...
 │   └── /js
 │      └── ... demo ...
 └── /view
@@ -85,13 +83,13 @@ setting: {
 #### Vue template
 
 ```html
-<div id="app">
-	<pattern-input placeholder="只能输入正整数" maxlength="10" class="your-class-name"
-	               :pattern="setting.pattern"
-	               :flags="setting.flags"
-	               :replacement="setting.replacement"
-	               v-model="setting.val"></pattern-input>
-</div>
+<pattern-input class="your-class-name"
+               :pattern="setting.pattern"
+               :flags="setting.flags"
+               :replacement="setting.replacement"
+               @input="handleInput"
+               @change="handleChange"
+               v-model="setting.val"></pattern-input>
 ```
 
 > This setting will make user input positive integer only.
@@ -99,6 +97,15 @@ setting: {
 ## Bugs and feature requests
 
 Have a bug or a feature request? If your problem or idea is not addressed yet, [please open a new issue](https://github.com/ct-adc/ct-adc-pattern-input/issues/new).
+
+## Thought
+
+I'm not sure is it necessary to emit all the input events. Now I only emit `input` and `change` events.
+
+And I think the RegExp settings is not good enough, it's a bit awkward. Maybe I should match what I want instead of replacing what I don't want.
+
+When I want to limit number range, it not convenient. In this condition, maybe create a number-input will be a good solution.
+
 
 ## License
 
