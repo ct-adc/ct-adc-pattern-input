@@ -89,7 +89,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-    import PatternInput from '../../../../component/vue-pattern-input.vue';
+    import PatternInput from '../../../../component/ct-adc-pattern-input.vue';
 
     export default {
         components: {
