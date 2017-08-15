@@ -61,11 +61,12 @@ ct-adc-pattern-input/
 ```javascript
 /**
  * Component Settings
- * @param  {String} pattern     Using for: RegExp(pattern[, flags])
- * @param  {String} flags       Using for: RegExp(pattern[, flags])
- * @param  {String} replacement Using for: String.prototype.replace(regexp, replacement)
+ * ~~@param  {String} pattern     Using for: RegExp(pattern[, flags])~~
+ * ~~@param  {String} flags       Using for: RegExp(pattern[, flags])~~
+ * @param  {RegExp} regExp[default: null]     Using for: String.prototype.replace(regexp, replacement)
+ * @param  {String} replacement[default: ''] Using for: String.prototype.replace(regexp, replacement)
  * @param  {String\Number} val  For v-model
- * @return {String}             
+ * @return {String}
  */
 ```
 
@@ -73,8 +74,7 @@ ct-adc-pattern-input/
 
 ```javascript
 setting: {
-  pattern: '^[0\\D]*|\\D*', // Match string that doen't belong to the positive integer
-  flags: 'g',
+  regExp: /^[0\D]*|\D*/g, // Match string that doesn't belong to the positive integer
   replacement: '',
   val: '223'
 }
@@ -84,8 +84,7 @@ setting: {
 
 ```html
 <pattern-input class="your-class-name"
-               :pattern="setting.pattern"
-               :flags="setting.flags"
+               :regExp="setting.regExp"
                :replacement="setting.replacement"
                @input="handleInput"
                @change="handleChange"
