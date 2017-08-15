@@ -12,7 +12,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12 setting-group">
-                        <button type="button" class="btn btn-sm btn-default"
+                        <button type="button" class="btn btn-sm btn-default mb5"
                                 :class="{ 'btn-success': setting.selected }"
                                 v-for="(setting, index) in quickSettings"
                                 @click="set(setting, index)">{{ setting.name }}
@@ -23,21 +23,8 @@
                 <hr class="dashed mt-30 mb-30">
 
                 <div class="form-group">
-                    <div class="col-sm-6">
-                        <div class="input-group">
-                            <span class="input-group-addon">RegExp</span>
-                            <input type="text" class="form-control" disabled
-                                   v-model="setting.regExp">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-6">
-                        <div class="input-group">
-                            <span class="input-group-addon">Replacement</span>
-                            <input type="text" class="form-control" disabled
-                                   v-model="setting.replacement">
-                        </div>
+                    <div class="col-sm-12">
+                        <pre>{{ JSON.stringify(setting, regExpToString, 4) }}</pre>
                     </div>
                 </div>
 
@@ -61,12 +48,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <pre>得到的数据：{{ setting.val }}</pre>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <button type="button" class="btn btn-danger" @click="clearInput">clear input</button>
+                        <button type="button" class="btn btn-danger" @click="clearInput">清除</button>
                     </div>
                 </div>
 
@@ -92,31 +74,31 @@
                 },
                 quickSettings: [
                     {
-                        name: 'Noting',
-                        regExp: null,
-                        replacement: '',
-                        selected: false
-                    },
-                    {
-                        name: 'Positive Integer',
+                        name: '正整数（默认值为非负数的情况）',
                         regExp: /^[0\D]*|\D*/g,
                         replacement: '',
                         selected: true
                     },
                     {
-                        name: 'Lowercase',
+                        name: '正整数（默认值为-1的情况）',
+                        regExp: /^(-\d+)|^[0\D]*|\D*/g,
+                        replacement: '',
+                        selected: false
+                    },
+                    {
+                        name: '小写字母',
                         regExp: /[^a-z]/g,
                         replacement: '',
                         selected: false
                     },
                     {
-                        name: 'Chinese',
+                        name: '中文（常见）',
                         regExp: /[^\u4e00-\u9fa5]/g,
                         replacement: '',
                         selected: false
                     },
                     {
-                        name: 'Phone Number (Need set [maxlength = 11])',
+                        name: '手机号码（需要设置 maxlength 为 11）',
                         regExp: /^[^1]|\D*/g,
                         replacement: '',
                         selected: false
@@ -151,6 +133,13 @@
             },
             handleChange(val) {
                 console.log(`change: ${ val }`);
+            },
+            regExpToString(k, v) {
+                if (v instanceof RegExp) {
+                    return v.toString();
+                }
+
+                return v;
             }
         }
     }
@@ -158,8 +147,8 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
     .setting-group {
-        .btn + .btn {
-            margin-left: 5px;
+        .btn {
+            margin-right: 5px;
         }
     }
 
