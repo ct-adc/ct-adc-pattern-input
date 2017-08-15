@@ -58,11 +58,13 @@ ct-adc-pattern-input/
 
 #### Parameter declaration
 
+废弃：
+* ~~@param  {String} pattern     Using for: RegExp(pattern[, flags])~~
+* ~~@param  {String} flags       Using for: RegExp(pattern[, flags])~~
+
 ```javascript
 /**
  * Component Settings
- * ~~@param  {String} pattern     Using for: RegExp(pattern[, flags])~~
- * ~~@param  {String} flags       Using for: RegExp(pattern[, flags])~~
  * @param  {RegExp} regExp[default: null]     Using for: String.prototype.replace(regexp, replacement)
  * @param  {String} replacement[default: ''] Using for: String.prototype.replace(regexp, replacement)
  * @param  {String\Number} val  For v-model
