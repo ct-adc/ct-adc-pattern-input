@@ -7,6 +7,7 @@ A Vue2.0 Component used RegExp to limit the user's input, and works like native 
 - [Demo build setup](#demo-build-setup)
 - [在线 demo](#在线-demo)
 - [项目结构](#项目结构)
+- [参数说明](#参数说明)
 - [示例](#示例)
 - [想法](#thought)
 - [License](#license)
@@ -51,17 +52,7 @@ ct-adc-pattern-input/
     └── demo.html
 ```
 
-## 示例
-
-#### 参数
-
-废弃：
-
-参数|类型|默认值|是否必填|描述
---- | --- | --- | --- | --- |
-pattern | String | '' | 是 | RegExp(pattern[, flags])
-flag | String | '' | 是 | RegExp(pattern[, flags])
-
+## 参数说明
 
 参数|类型|默认值|是否必填|描述
 --- | --- | --- | --- | --- |
@@ -69,6 +60,8 @@ regExp | RegExp | null | 否 | 用于 String.prototype.replace(regexp, replaceme
 replacement | String | '' | 否 | 用于 String.prototype.replace(regexp, replacement)
 val | String/Number | | 是 | v-model 的值
 
+
+## 示例
 
 #### Vue script
 
