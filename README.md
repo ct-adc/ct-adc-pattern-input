@@ -58,7 +58,7 @@ ct-adc-pattern-input/
 废弃：
 
 参数|类型|默认值|是否必填|描述
---- | --- | --- | --- |
+--- | --- | --- | --- | --- |
 pattern | String | '' | 是 | RegExp(pattern[, flags])
 flag | String | '' | 是 | RegExp(pattern[, flags])
 
