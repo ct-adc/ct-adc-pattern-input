@@ -9,7 +9,7 @@
 - [项目结构](#项目结构)
 - [参数说明](#参数说明)
 - [示例](#示例)
-- [想法](#thought)
+- [想法](#想法)
 - [License](#license)
 
 ## Demo build setup
