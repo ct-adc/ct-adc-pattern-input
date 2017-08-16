@@ -67,8 +67,8 @@ val | String/Number | | 是 | v-model 的值
 
 ```javascript
 setting: {
-  regExp: /^[0\D]*|\D*/g, // Match string that doesn't belong to the positive integer
-  replacement: '',
+  regExp: /^[0\D]*|\D*/g, // 匹配不属于正整数的字符
+  replacement: '',
   val: '223'
 }
 ```
