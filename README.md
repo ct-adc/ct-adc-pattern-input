@@ -2,14 +2,13 @@
 
 A Vue2.0 Component used RegExp to limit the user's input, and works like native input element.
 
-## Table of contents
+## 目录
 
 - [Demo build setup](#demo-build-setup)
-- [Live Demo](#live-demo)
-- [What's included](#whats-included)
-- [Quick start](#quick-start)
-- [Bugs and feature requests](#bugs-and-feature-requests)
-- [Thought](#thought)
+- [在线 demo](#在线-demo)
+- [项目结构](#项目结构)
+- [示例](#示例)
+- [想法](#thought)
 - [License](#license)
 
 ## Demo build setup
@@ -32,45 +31,42 @@ npm run build --report
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-## Live demo
+## 在线 demo
 
-Just click there: [Live Demo](http://htmlpreview.github.io/?https://github.com/ct-adc/ct-adc-pattern-input/blob/master/view/demo.html).
+点击: [Live Demo](http://htmlpreview.github.io/?https://github.com/ct-adc/ct-adc-pattern-input/blob/master/view/demo.html).
 
 ![demo.gif](./src/img/demo.gif)
 
-## What's included
-
-Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
+## 项目结构
 
 ```
 ct-adc-pattern-input/
 ├── ...
 ├── src/
 │   ├── /component
-│   │   └── pattern-input.vue
+│   │   └── pattern-input.vue // 组件
 │   └── /js
 │      └── ... demo ...
 └── /view
     └── demo.html
 ```
 
-## Quick start
+## 示例
 
-#### Parameter declaration
+#### 参数
 
 废弃：
-* ~~@param  {String} pattern     Using for: RegExp(pattern[, flags])~~
-* ~~@param  {String} flags       Using for: RegExp(pattern[, flags])~~
+参数 | 类型 | 默认值 | 描述
+--- | --- | --- | --- |
+pattern | String | '' | RegExp(pattern[, flags])
+flag | String | '' | RegExp(pattern[, flags])
 
-```javascript
-/**
- * Component Settings
- * @param  {RegExp} regExp[default: null]     Using for: String.prototype.replace(regexp, replacement)
- * @param  {String} replacement[default: ''] Using for: String.prototype.replace(regexp, replacement)
- * @param  {String\Number} val  For v-model
- * @return {String}
- */
-```
+参数 | 类型 | 默认值 | 是否必填 | 描述
+--- | --- | --- | --- |
+regExp | RegExp | null | 否 | 用于 String.prototype.replace(regexp, replacement)
+replacement | String | '' | 否 | 用于 String.prototype.replace(regexp, replacement)
+val | String\Number | | 是 | v-model 的值
+
 
 #### Vue script
 
@@ -93,13 +89,9 @@ setting: {
                v-model="setting.val"></pattern-input>
 ```
 
-> This setting will make user input positive integer only.
+> 这是一个只能输入正整数的配置
 
-## Bugs and feature requests
-
-Have a bug or a feature request? If your problem or idea is not addressed yet, [please open a new issue](https://github.com/ct-adc/ct-adc-pattern-input/issues/new).
-
-## Thought
+## 想法
 
 I'm not sure is it necessary to emit all the input events. Now I only emit `input` and `change` events.
 

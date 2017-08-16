@@ -24,7 +24,10 @@
 
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <pre>{{ JSON.stringify(setting, regExpToString, 4) }}</pre>
+                        <div class="input-group pre" v-for="(v, k) in setting">
+                            <span class="input-group-addon">{{ k }}:</span>
+                            <input class="form-control" type="text" readonly v-model="setting[k]">
+                        </div>
                     </div>
                 </div>
 
@@ -162,5 +165,20 @@
 
     .mb-30 {
         margin-bottom: 30px;
+    }
+
+    .pre {
+        font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+
+        .input-group-addon {
+            border: none;
+            border-radius: 0;
+        }
+
+        input {
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+        }
     }
 </style>
