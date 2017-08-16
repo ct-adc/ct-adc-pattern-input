@@ -56,16 +56,18 @@ ct-adc-pattern-input/
 #### 参数
 
 废弃：
-参数 | 类型 | 默认值 | 描述
---- | --- | --- | --- |
-pattern | String | '' | RegExp(pattern[, flags])
-flag | String | '' | RegExp(pattern[, flags])
 
-参数 | 类型 | 默认值 | 是否必填 | 描述
+参数|类型|默认值|是否必填|描述
 --- | --- | --- | --- |
+pattern | String | '' | 是 | RegExp(pattern[, flags])
+flag | String | '' | 是 | RegExp(pattern[, flags])
+
+
+参数|类型|默认值|是否必填|描述
+--- | --- | --- | --- | --- |
 regExp | RegExp | null | 否 | 用于 String.prototype.replace(regexp, replacement)
 replacement | String | '' | 否 | 用于 String.prototype.replace(regexp, replacement)
-val | String\Number | | 是 | v-model 的值
+val | String/Number | | 是 | v-model 的值
 
 
 #### Vue script
