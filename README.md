@@ -1,6 +1,6 @@
 # ct-adc-pattern-input
 
-A Vue2.0 Component used RegExp to limit the user's input, and works like native input element.
+基于 Vue2.0，使用正则限制用户输入的 input 组件，支持 v-model
 
 ## 目录
 
@@ -81,10 +81,10 @@ setting: {
                :replacement="setting.replacement"
                @input="handleInput"
                @change="handleChange"
-               v-model="setting.val"></pattern-input>
+               v-model.number="setting.val"></pattern-input>
 ```
 
-> 这是一个只能输入正整数的配置
+> 这是一个只能输入正整数的配置，记得使用 v-molde.number
 
 ## 想法
 
