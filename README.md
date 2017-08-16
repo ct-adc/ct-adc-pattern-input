@@ -84,7 +84,7 @@ setting: {
                v-model.number="setting.val"></pattern-input>
 ```
 
-> 这是一个只能输入正整数的配置，记得使用 v-molde.number
+> 这是一个只能输入正整数的配置，记得使用 v-molde.number，如果你想要得到 Number 类型（maxlength 最大安全值是 15）
 
 ## 想法
 
