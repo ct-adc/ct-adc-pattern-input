@@ -1,6 +1,5 @@
 <template>
-    <input :value="value"
-           @input="updateValue($event.target.value)"
+    <input @input="updateValue($event.target.value)"
            @change="emitChange"
            v-model="val"
            ref="input">
@@ -32,6 +31,9 @@
             return {
                 val: ''
             };
+        },
+        created(){
+            this.updateValue(this.value);
         },
         methods: {
             // format the value of input
