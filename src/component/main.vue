@@ -5,11 +5,8 @@
            ref="input">
 </template>
 
-<script type="text/ecmascript-6">
+<script>
     export default {
-        mounted() {
-            this.updateValue(this.value);
-        },
         name: 'vue-pattern-input',
         props: {
             value: {
@@ -33,6 +30,9 @@
             };
         },
         created(){
+            this.updateValue(this.value);
+        },
+        mounted() {
             this.updateValue(this.value);
         },
         methods: {
@@ -67,8 +67,5 @@
                 this.updateValue(val);
             }
         }
-    }
+    };
 </script>
-
-<style>
-</style>

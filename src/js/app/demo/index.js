@@ -5,7 +5,7 @@
 import Vue from 'vue';
 import Demo from './component/Demo.vue';
 
-const app = new Vue({
-  el: '#demo',
-  render: h => h(Demo)
-}).$mount('#demo');
+new Vue({
+    el: '#demo',
+    render: h => h(Demo)
+});

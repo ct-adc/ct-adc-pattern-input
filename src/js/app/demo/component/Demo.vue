@@ -62,13 +62,13 @@
 </template>
 
 <script type="text/ecmascript-6">
-    import PatternInput from '../../../../component/ct-adc-pattern-input.vue';
+    import PatternInput from 'main.vue';
 
     export default {
         components: {
             PatternInput
         },
-        data () {
+        data() {
             return {
                 setting: {
                     regExp: /^[0\D]*|\D*/g,
@@ -110,14 +110,14 @@
             };
         },
         methods: {
-            set (oSetting, nIndex) {
+            set(oSetting, nIndex) {
                 this.setting.regExp = oSetting.regExp;
                 this.setting.replacement = oSetting.replacement;
 
                 this.setSelectedStatus(nIndex);
                 this.clearInput();
             },
-            setSelectedStatus (nIndex) {
+            setSelectedStatus(nIndex) {
                 this.quickSettings.map((setting, index) => {
                     if (nIndex === index) {
                         setting.selected = true;
@@ -145,7 +145,7 @@
                 return v;
             }
         }
-    }
+    };
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
